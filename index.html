@@ -1,25 +1,159 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ADS401-Group-I - Demo Page</title>
+  <title>ADS401 Group I - Evaluating AI Integration at XJTLU</title>
   <style>
-    body { font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; padding: 2rem; }
-    header { border-bottom: 1px solid #eee; margin-bottom: 1rem; }
+    :root {
+      --xjtu-blue: #002D72;
+      --xjtu-light: #E8ECF4;
+      --text-color: #1a1a1a;
+      --muted: #666;
+      --border: #e0e0e0;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      color: var(--text-color);
+      background: #fafafa;
+    }
+    header {
+      background: var(--xjtu-blue);
+      color: white;
+      padding: 2rem 2rem 1.5rem;
+    }
+    header h1 {
+      margin: 0 0 0.25rem;
+      font-size: 1.8rem;
+    }
+    header p.subtitle {
+      margin: 0;
+      opacity: 0.85;
+      font-size: 1rem;
+    }
+    main {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+    section {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 1.5rem;
+    }
+    section h2 {
+      margin-top: 0;
+      color: var(--xjtu-blue);
+      font-size: 1.35rem;
+      border-bottom: 2px solid var(--xjtu-light);
+      padding-bottom: 0.5rem;
+    }
+    .rq-box {
+      background: var(--xjtu-light);
+      border-left: 4px solid var(--xjtu-blue);
+      padding: 1rem 1.25rem;
+      border-radius: 4px;
+      font-size: 1.05rem;
+      font-weight: 500;
+    }
+    .meta-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .meta-list li {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      gap: 0.75rem;
+    }
+    .meta-list li:last-child { border-bottom: none; }
+    .meta-label {
+      font-weight: 600;
+      min-width: 140px;
+      color: var(--xjtu-blue);
+    }
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.85rem;
+      padding: 1.5rem;
+      border-top: 1px solid var(--border);
+      background: white;
+    }
+    a { color: var(--xjtu-blue); }
+    .tag {
+      display: inline-block;
+      background: var(--xjtu-light);
+      color: var(--xjtu-blue);
+      font-size: 0.8rem;
+      padding: 0.15rem 0.6rem;
+      border-radius: 12px;
+      margin-right: 0.4rem;
+      margin-bottom: 0.3rem;
+    }
   </style>
 </head>
 <body>
   <header>
-    <h1>ADS401-Group-I</h1>
-    <p>演示的 GitHub Pages 页面（自动生成）</p>
+    <h1>ADS401 Group I</h1>
+    <p class="subtitle">Evaluating AI Integration at XJTLU &mdash; Presentation 2: Evaluation Design</p>
   </header>
   <main>
-    <p>这是一个简单的静态页面，可用于 GitHub Pages 站点。</p>
-    <ul>
-      <li><a href="https://github.com/Wakeral/ADS401-Group-I">项目仓库</a></li>
-    </ul>
+    <section>
+      <h2>Research Question</h2>
+      <div class="rq-box">
+        How does an AI-assisted literature reading and summarization workflow affect XJTLU students&rsquo; unaided comprehension of academic papers relevant to their thesis projects?
+      </div>
+    </section>
+
+    <section>
+      <h2>Target Users</h2>
+      <ul class="meta-list">
+        <li>
+          <span class="meta-label">Population</span>
+          <span>XJTLU undergraduate and postgraduate students working on thesis projects</span>
+        </li>
+        <li>
+          <span class="meta-label">Institution</span>
+          <span>Xi&rsquo;an Jiaotong-Liverpool University (XJTLU)</span>
+        </li>
+        <li>
+          <span class="meta-label">Relevant Context</span>
+          <span>Students who regularly read academic papers as part of their thesis literature review</span>
+        </li>
+        <li>
+          <span class="meta-label">Key Characteristics</span>
+          <span>
+            <span class="tag">Thesis students</span>
+            <span class="tag">Academic paper readers</span>
+            <span class="tag">AI tool users (varying experience)</span>
+          </span>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>About This Project</h2>
+      <p>
+        This study is part of the <strong>ADS401 Evaluation Methods and Statistics</strong> module at XJTLU.
+        Our group explores how AI-assisted reading and summarization tools influence students&rsquo;
+        independent comprehension of academic literature in the context of thesis research.
+      </p>
+      <ul>
+        <li><a href="https://github.com/Wakeral/ADS401-Group-I">Project Repository</a></li>
+        <li>Module Leader: Dr Yue Li</li>
+      </ul>
+    </section>
   </main>
-  <footer style="margin-top:2rem;color:#666;font-size:0.9rem;">生成于 2026-10-05</footer>
+  <footer>
+    ADS401 Group I &middot; XJTLU &middot; September 2026
+  </footer>
 </body>
 </html>
