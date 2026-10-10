@@ -17,3 +17,11 @@ TBD [probably surveys, interview questions]
 
 **Information Sheet and Consent Form**
 TBR
+
+**Presentation Slide**
+https://canva.link/0b71yl49timvfk6
+>> please click the link to edit the slide
+
+**PDF document**
+https://docs.qq.com/doc/DVm5Qd3VNaVp3QmZx
+>> please click on the link to edit the pdf
