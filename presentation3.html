@@ -69,19 +69,19 @@
   .block-note{font-size:23px;margin-bottom:20px}
   .hchart{position:relative;height:380px;padding-left:230px;padding-top:6px}
   .hrow{position:relative;height:70px}
-  .hrow .hl{position:absolute;left:-230px;right:14px;top:20px;text-align:right;font-size:22px;white-space:nowrap}
-  .hrow .track{position:absolute;left:0;right:70px;top:6px;bottom:10px}
-  .hrow .fill{height:100%;border-radius:11px;background:var(--blue-dk)}
+  .hrow .hl{position:absolute;left:-230px;width:216px;top:20px;text-align:right;font-size:22px;white-space:nowrap}
+  .hrow .track{position:absolute;left:0;right:70px;top:6px;bottom:10px;overflow:hidden}
+  .hrow .fill{display:block;height:100%;border-radius:11px;background:var(--blue-dk)}
   .hrow .hv{position:absolute;right:0;top:22px;font-size:25px;font-weight:600;width:60px}
   .haxis{position:absolute;left:250px;right:0;top:-26px;display:flex;justify-content:space-between;font-size:24px}
-  .interpret{position:absolute;left:105px;right:105px;bottom:90px;font-size:27px;line-height:1.4}
+  .interpret{margin-top:30px;font-size:27px;line-height:1.45}
 
   /* ---------- additional findings ---------- */
   .add-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:60px}
   .add-note{font-size:34px;font-weight:700;line-height:1.35;margin-bottom:24px;max-width:780px}
   .add-hchart{position:relative;height:420px;padding-left:175px}
   .add-hchart .hrow{height:78px}
-  .add-hchart .hrow .hl{left:-175px;font-size:19px;top:26px}
+  .add-hchart .hrow .hl{left:-175px;width:162px;font-size:19px;top:26px}
   .add-hchart .hrow .track{right:46px}
   .add-hchart .hrow .hv{width:40px;font-size:22px;top:30px}
   .add-haxis{position:absolute;left:175px;right:0;top:-28px;display:flex;justify-content:space-between;font-size:21px}
