@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ADS401 Presentation 3 — AI Literacy and Academic Integrity Anxiety</title>
+<style>
+  :root{
+    --navy:#112635;
+    --navy-card:#1a3446;
+    --teal:#16a894;
+    --blue:#457aa8;
+    --amber:#e2aa40;
+    --light:#f4f6f5;
+    --mint:#e7f1ee;
+    --ink:#172b38;
+    --muted:#6b7d88;
+    --track:#dce4e2;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%;overflow:hidden;background:#0b1b27;font-family:"Segoe UI",system-ui,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;color:var(--ink)}
+
+  /* ---------- stage / scaling ---------- */
+  #viewport{position:fixed;inset:0;display:flex;align-items:center;justify-content:center}
+  #stage{width:1600px;height:900px;position:relative;transform-origin:center center}
+  .slide{position:absolute;inset:0;width:1600px;height:900px;display:none;padding:70px 85px;overflow:hidden}
+  .slide.active{display:block}
+  .slide.dark{background:var(--navy);color:#fff}
+  .slide.light{background:var(--light);color:var(--ink)}
+
+  /* left accent stripe on title slide */
+  .stripe{position:absolute;left:0;top:0;bottom:0;width:14px;background:var(--teal)}
+
+  /* ---------- shared typography ---------- */
+  .kicker{font-size:21px;font-weight:700;letter-spacing:.06em;color:var(--teal);text-transform:uppercase;margin-bottom:26px}
+  .kicker .speaker{color:#2f9e8f;font-weight:700;margin-left:18px}
+  .slide.dark .kicker{color:var(--teal)}
+  h1.deck-title{font-size:74px;line-height:1.18;font-weight:800;letter-spacing:-.01em;margin:110px 0 0;max-width:1000px}
+  .deck-sub{font-size:37px;color:#c3d0d6;margin-top:64px;font-weight:400}
+  h2.slide-title{font-size:56px;font-weight:800;letter-spacing:-.01em;margin-bottom:16px}
+  .slide-sub{font-size:27px;color:var(--muted);margin-bottom:44px}
+  .slide.dark .slide-sub{color:#9fb2bb}
+
+  /* ---------- cards ---------- */
+  .cards{display:flex;gap:34px}
+  .card{background:#fff;border-radius:24px;box-shadow:0 5px 12px rgba(18,40,52,.13);padding:38px 40px;flex:1;position:relative;overflow:hidden}
+  .card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:10px}
+  .card.teal::before{background:var(--teal)}
+  .card.blue::before{background:var(--blue)}
+  .card.amber::before{background:var(--amber)}
+  .card h3{font-size:31px;font-weight:800;margin-bottom:20px}
+  .card p,.card li{font-size:27px;line-height:1.5;color:var(--muted)}
+  .card ul{list-style:none}
+  .card li{margin:8px 0}
+
+  .panel{border-radius:24px;padding:38px 46px;margin-top:34px}
+  .panel.mint{background:var(--mint)}
+  .panel.navy{background:#0f2433;color:#fff;box-shadow:0 5px 12px rgba(18,40,52,.25)}
+  .panel h3{font-size:29px;font-weight:800;color:var(--teal);margin-bottom:14px;text-transform:none}
+  .panel p{font-size:28px;line-height:1.5;font-weight:600}
+  .panel.navy p{color:#eef3f5;font-weight:400}
+
+  .titlecard{background:var(--navy-card);border-radius:22px;padding:34px 42px;max-width:700px;margin-top:90px;position:relative;overflow:hidden;box-shadow:0 6px 14px rgba(0,0,0,.3)}
+  .titlecard .label{color:var(--teal);font-size:24px;font-weight:800;letter-spacing:.04em}
+  .titlecard .value{font-size:34px;font-weight:700;margin-top:16px}
+  .footnote{position:absolute;left:85px;bottom:54px;font-size:21px;color:#9fb2bb}
+
+  /* ---------- findings slide ---------- */
+  .findings-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:60px}
+  .chart-block h3,.anxiety-block h3{font-size:32px;font-weight:800;margin-bottom:34px}
+  .bar-row{display:flex;align-items:center;margin:0 0 34px;gap:22px}
+  .bar-label{width:300px;text-align:right;font-size:25px;color:var(--muted)}
+  .bar-track{flex:1;height:46px;position:relative}
+  .bar-fill{height:100%;border-radius:6px;box-shadow:0 4px 8px rgba(18,40,52,.18)}
+  .bar-val{font-size:31px;font-weight:800;margin-left:14px;width:90px}
+  .axis{display:flex;justify-content:space-between;margin:6px 0 0 322px;font-size:27px;color:var(--ink)}
+  .anxiety-line{display:flex;gap:26px;align-items:baseline;margin:14px 0;font-size:32px}
+  .anxiety-line .n{font-size:40px;font-weight:400;width:60px}
+  .rho{color:var(--teal);font-size:47px;font-weight:800;margin-top:30px}
+  .rho-note{font-size:31px;margin-top:10px}
+  .lang-note{font-size:27px;color:var(--muted);margin-top:36px;line-height:1.45}
+
+  /* ---------- closing ---------- */
+  .centerpiece{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+  .thanks{font-size:72px;font-weight:800}
+  .questions{color:var(--teal);font-size:42px;font-weight:700;margin-top:42px}
+
+  /* ---------- controls ---------- */
+  #nav{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:14px;z-index:10}
+  #nav button{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);color:#fff;width:42px;height:42px;border-radius:50%;font-size:19px;cursor:pointer;backdrop-filter:blur(4px)}
+  #nav button:hover{background:rgba(255,255,255,.3)}
+  #dots{display:flex;gap:9px}
+  #dots span{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.35);cursor:pointer}
+  #dots span.on{background:var(--teal)}
+  #counter{position:fixed;bottom:30px;right:34px;color:rgba(255,255,255,.65);font-size:15px;z-index:10}
+  @media (max-width:700px){#counter{display:none}}
+</style>
+</head>
+<body>
+
+<div id="viewport">
+  <div id="stage">
+
+    <!-- 1 · TITLE -->
+    <section class="slide dark active">
+      <div class="stripe"></div>
+      <div class="kicker">ADS401 / PRESENTATION 3</div>
+      <h1 class="deck-title">AI Literacy and<br>Academic Integrity Anxiety</h1>
+      <p class="deck-sub">Survey results from postgraduate students at XJTLU</p>
+      <div class="titlecard">
+        <div class="label">GROUP I</div>
+        <div class="value">11 postgraduate respondents</div>
+      </div>
+    </section>
+
+    <!-- 2 · RESEARCH QUESTION -->
+    <section class="slide light">
+      <div class="kicker">01&nbsp;&nbsp;RESEARCH QUESTION<span class="speaker">SPEAKER 1</span></div>
+      <h2 class="slide-title">Research question</h2>
+      <p class="slide-sub">Postgraduate students at XJTLU</p>
+      <div class="cards">
+        <div class="card teal">
+          <h3>Main relationship</h3>
+          <p>How does AI literacy relate to academic integrity anxiety?</p>
+        </div>
+        <div class="card blue">
+          <h3>Background differences</h3>
+          <p>Does this relationship differ by discipline and language background?</p>
+        </div>
+      </div>
+      <div class="panel mint">
+        <h3>Study approach</h3>
+        <p>A cross-sectional questionnaire of students' self-reported knowledge, AI use and concerns.</p>
+      </div>
+    </section>
+
+    <!-- 3 · METHOD -->
+    <section class="slide light">
+      <div class="kicker">02&nbsp;&nbsp;SURVEY METHOD AND ANALYSIS<span class="speaker">SPEAKER 2</span></div>
+      <h2 class="slide-title">Survey method and analysis</h2>
+      <p class="slide-sub">Tencent Questionnaire in English and Chinese, designed for about 20 minutes</p>
+      <div class="cards">
+        <div class="card teal">
+          <h3>Participants</h3>
+          <ul>
+            <li>11 responses</li>
+            <li>10 master's students</li>
+            <li>1 doctoral student</li>
+          </ul>
+        </div>
+        <div class="card blue">
+          <h3>Measures</h3>
+          <ul>
+            <li>AI literacy: Q21–27 mean</li>
+            <li>Overall anxiety: Q46</li>
+            <li>Self-reported ratings</li>
+          </ul>
+        </div>
+        <div class="card amber">
+          <h3>Analysis</h3>
+          <ul>
+            <li>Counts and item means</li>
+            <li>Spearman correlation</li>
+            <li>Exact permutation test</li>
+          </ul>
+        </div>
+      </div>
+      <div class="panel navy">
+        <h3>Scoring</h3>
+        <p>Exploratory 7-item index, not a validated scale. Both scores use 1–5.<br>All 11 records have complete answers to these items.</p>
+      </div>
+    </section>
+
+    <!-- 4 · FINDINGS -->
+    <section class="slide light">
+      <div class="kicker">03&nbsp;&nbsp;SURVEY FINDINGS<span class="speaker">SPEAKER 3</span></div>
+      <h2 class="slide-title">Survey findings</h2>
+      <p class="slide-sub">11 responses. Selected item means use a 1–5 scale</p>
+      <div class="findings-grid">
+        <div class="chart-block">
+          <h3>Selected AI literacy self-ratings</h3>
+          <div class="bar-row">
+            <div class="bar-label">Summary verification</div>
+            <div class="bar-track"><div class="bar-fill" style="width:71%;background:var(--blue)"></div></div>
+            <div class="bar-val">3.55</div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label">AI-error awareness</div>
+            <div class="bar-track"><div class="bar-fill" style="width:91%;background:var(--teal)"></div></div>
+            <div class="bar-val">4.55</div>
+          </div>
+          <div class="axis"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></div>
+        </div>
+        <div class="anxiety-block">
+          <h3>Overall integrity anxiety</h3>
+          <div class="anxiety-line"><span class="n">3</span><span>no anxiety</span></div>
+          <div class="anxiety-line"><span class="n">7</span><span>slight anxiety</span></div>
+          <div class="anxiety-line"><span class="n">1</span><span>moderate anxiety</span></div>
+        </div>
+      </div>
+      <div class="rho">Spearman &rho; = &minus;0.54 &nbsp;&nbsp; p = 0.109</div>
+      <div class="rho-note">Negative association, not statistically significant at 0.05</div>
+      <div class="lang-note">8/10 applicable respondents relied more on AI for English reading than for reading in their first language</div>
+    </section>
+
+    <!-- 5 · CONCLUSIONS -->
+    <section class="slide light">
+      <div class="kicker">04&nbsp;&nbsp;CONCLUSIONS AND REFLECTION<span class="speaker">SPEAKER 4</span></div>
+      <h2 class="slide-title">Conclusions and reflection</h2>
+      <p class="slide-sub">The observed negative association does not establish causation</p>
+      <div class="cards">
+        <div class="card teal">
+          <h3>Current finding</h3>
+          <p>Risk awareness was high.<br>Anxiety was mostly mild.<br>The association was not significant.</p>
+        </div>
+        <div class="card blue">
+          <h3>Background differences</h3>
+          <p>Differences by discipline and language background were not tested.</p>
+        </div>
+        <div class="card amber">
+          <h3>Follow-up status</h3>
+          <p>4 interview volunteers.<br>Draft task plan only.<br>No task evaluation conducted.</p>
+        </div>
+      </div>
+      <div class="panel mint">
+        <p>Implementation reflection: define scoring and background categories clearly, and distinguish completed survey work from planned tasks.</p>
+      </div>
+    </section>
+
+    <!-- 6 · THANK YOU -->
+    <section class="slide dark">
+      <div class="centerpiece">
+        <div class="thanks">Thank you</div>
+        <div class="questions">Questions?</div>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<div id="nav">
+  <button id="prev" aria-label="Previous slide">&#8592;</button>
+  <div id="dots"></div>
+  <button id="next" aria-label="Next slide">&#8594;</button>
+</div>
+<div id="counter"></div>
+
+<script>
+(function(){
+  var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+  var dotsBox = document.getElementById('dots');
+  var counter = document.getElementById('counter');
+  var current = 0;
+
+  slides.forEach(function(_, i){
+    var d = document.createElement('span');
+    d.addEventListener('click', function(){ go(i); });
+    dotsBox.appendChild(d);
+  });
+  var dots = Array.prototype.slice.call(dotsBox.children);
+
+  function fit(){
+    var s = Math.min(window.innerWidth/1600, window.innerHeight/900);
+    document.getElementById('stage').style.transform = 'scale(' + s + ')';
+  }
+
+  function go(i){
+    current = Math.max(0, Math.min(slides.length - 1, i));
+    slides.forEach(function(sl, idx){ sl.classList.toggle('active', idx === current); });
+    dots.forEach(function(d, idx){ d.classList.toggle('on', idx === current); });
+    counter.textContent = (current + 1) + ' / ' + slides.length;
+  }
+
+  document.getElementById('prev').addEventListener('click', function(){ go(current - 1); });
+  document.getElementById('next').addEventListener('click', function(){ go(current + 1); });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') go(current + 1);
+    if(e.key === 'ArrowLeft' || e.key === 'PageUp') go(current - 1);
+    if(e.key === 'Home') go(0);
+    if(e.key === 'End') go(slides.length - 1);
+  });
+
+  var startX = null;
+  document.addEventListener('touchstart', function(e){ startX = e.touches[0].clientX; }, {passive:true});
+  document.addEventListener('touchend', function(e){
+    if(startX === null) return;
+    var dx = e.changedTouches[0].clientX - startX;
+    if(Math.abs(dx) > 50) go(current + (dx < 0 ? 1 : -1));
+    startX = null;
+  }, {passive:true});
+
+  window.addEventListener('resize', fit);
+  fit();
+  go(0);
+})();
+</script>
+</body>
+</html>
