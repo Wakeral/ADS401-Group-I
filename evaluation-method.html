@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Evaluation-Method | ADS401 Group I</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<aside class="sidebar">
+
+    <div class="sidebar-header">
+    <h2>AI-assisted literature reading and independent comprehension</h2>
+    <p>Group I</p>
+    </div>
+
+    <nav class="sidebar-nav">
+    <p class="nav-label">PROJECT</p>
+
+    <a href="index.html" class="nav-link">⌂ Overview</a>
+    <a href="objective.html" class="nav-link">◎ Objectives</a>
+    <a href="survey.html" class="nav-link">▤ Survey</a>
+    <a href="design-method.html" class="nav-link">◈ Design Method</a>
+    <a href="evaluation-method.html" class="nav-link active">◷ Evaluation & Results</a>
+    <!-- <a href="results.html" class="nav-link">▥ Results</a> -->
+    <a href="conclusion.html" class="nav-link">✓ Conclusion</a>
+    </nav>
+
+    <div class="sidebar-footer">
+    <p>ADS401</p>
+    <p>XJTLU · 2026</p>
+    </div>
+
+</aside>
+
+<main class="main-content">
+
+    <header class="page-header">
+    <p class="breadcrumb">ADS401 / Evaluation and Results</p>
+    <h1>Evaluation Method and Results</h1>
+    <p class="subtitle">
+        Statistical methods used to evaluate the collected survey data and task data.
+    </p>
+    </header>
+
+    <!-- EVALUATION METHOD SECTION -->
+    <section class="content-section">
+        <h2>Survey Evaluation Method</h2>
+        <p>
+            This study employed a <strong>mixed-methods, cross-sectional survey design</strong> to investigate how XJTLU postgraduate students use AI tools in their academic work. The evaluation focused on four core dimensions: (1) the frequency and types of AI tools used, (2) the specific tasks students delegate to AI during academic reading, (3) their self-reported AI literacy and academic integrity anxiety, and (4) their perceived effects of AI on independent comprehension.
+        </p>
+        
+        <h3>Data Collection and Processing</h3>
+        <p>
+            Data was collected via an online questionnaire comprising Likert-scale items, multiple-response questions, and open-ended prompts. Raw responses were exported as a structured CSV dataset and processed using <strong>Jupyter Notebook</strong> with <strong>Python</strong>, utilizing <strong>pandas</strong> for data manipulation and <strong>NumPy</strong> for numerical operations. The cleaning pipeline involved filtering ineligible responses, handling missing values, and standardizing bilingual column headers. 
+        </p>
+        <p>
+            A custom Python script was developed to parse Likert-scale labels (e.g., mapping <code>A.Never</code> through <code>E.Almost every time</code> to ordinal scores 1–5). Free-text responses regarding AI tool usage were normalized using an editable alias dictionary to group variants (e.g., matching "GPT" and "ChatGPT" under a single model category) before generating frequency distributions and descriptive statistics.
+        </p>
+
+        <h3>Analytical Strategy</h3>
+        <p>
+            Descriptive statistics (counts, percentages, means, medians, and standard deviations) were generated for all quantitative items. Multi-response questions (e.g., tasks performed with AI, difficult paper sections) were analyzed by calculating the proportion of participants selecting each option. To assess the relationship between opposing perceptions of AI's impact, a reverse-scored item (Q50: "AI weakened my independent understanding") was computed and correlated with its positive counterpart (Q49) using Spearman's rank correlation. All resulting tables and charts were exported as CSVs for reporting.
+        </p>
+    </section>
+
+    <!-- RESULTS SECTION -->
+    <section class="content-section">
+        <h2>Brief Survey Results Overview</h2>
+        <p>
+            Analysis of the current dataset (N = 11) reveals several distinct patterns in AI usage and perception among the surveyed postgraduate students:
+        </p>
+
+        <!-- Chart 1: AI Tools -->
+        <figure class="data-figure">
+            <img src="data-visuals/survey/AI-model-used.png" alt="Bar chart showing AI models mentioned by participants">
+            <figcaption><strong>Figure 1.</strong> AI models/tools mentioned by participants (multiple responses allowed). ChatGPT/GPT dominates usage.</figcaption>
+        </figure>
+        <p>
+            <strong>AI Tool Preference:</strong> <strong>ChatGPT / GPT</strong> was the dominant tool, mentioned by 63.6% of participants (n = 7). Doubao followed at 18.2% (n = 2), while Claude, Gemini, DeepSeek, and institutional tools like Xipu AI were each mentioned by a single participant (9.1%).
+        </p>
+
+        <!-- Chart 2: AI Tasks -->
+        <figure class="data-figure">
+            <img src="data-visuals/survey/AI-task-chart.png" alt="Bar chart showing how participants use AI for academic reading">
+            <figcaption><strong>Figure 2.</strong> How participants use AI for academic reading tasks.</figcaption>
+        </figure>
+        <p>
+            <strong>Primary Use Cases:</strong> Students primarily use AI to <strong>explain research methods</strong> (81.8%, n = 9) and <strong>summarize papers</strong> (72.7%, n = 8). Translation (63.6%) and defining terms (54.5%) were also highly cited, whereas extracting limitations was the least common task (9.1%).
+        </p>
+
+        <!-- Chart 3: Difficult Sections & Paper Types -->
+        <div class="chart-pair">
+            <figure class="data-figure">
+                <img src="data-visuals/survey/difficult-sections-chart.png" alt="Bar chart showing difficult paper sections without AI">
+                <figcaption><strong>Figure 3a.</strong> Paper sections participants find most difficult without AI.</figcaption>
+            </figure>
+            <figure class="data-figure">
+                <img src="data-visuals/survey/paper-type.png" alt="Bar chart showing paper types needing AI assistance">
+                <figcaption><strong>Figure 3b.</strong> Types of papers participants think need AI assistance most.</figcaption>
+            </figure>
+        </div>
+        <p>
+            <strong>Reading Challenges:</strong> When reading without AI, participants found <strong>Methodology</strong> (54.5%) and <strong>Technical Terms</strong> (45.5%) the most difficult sections. Consequently, 72.7% felt that highly technical papers and those with complex methods most required AI assistance.
+        </p>
+
+        <!-- Chart 4: Likert Distribution -->
+        <figure class="data-figure">
+            <img src="data-visuals/survey/likert-distribution-chart.png" alt="Stacked bar chart showing Likert response distribution by survey item">
+            <figcaption><strong>Figure 4.</strong> Likert response distribution by survey item.</figcaption>
+        </figure>
+        <figure class="data-figure">
+            <img src="data-visuals/survey/likert-table.png" alt="Legend for Likert response distribution chart">
+            <figcaption><strong>Figure 4b.</strong> Legend for Figure 4.</figcaption>
+        <p>
+            <strong>Perceived Impact and Calibration:</strong> Participants generally felt AI <em>improved</em> their independent understanding (Mean = 3.73 on a 5-point scale). However, when asked if AI <em>weakened</em> their understanding, the mean was 2.73. After reverse-scoring the negative item, a strong positive Spearman correlation (<em>r</em> = 0.828) emerged between the two items, indicating that students who perceive benefits from AI are also acutely aware of its potential to undermine their independent thinking.
+        </p>
+
+        <!-- Chart 5: Overall Frequency -->
+        <figure class="data-figure">
+            <img src="data-visuals/survey/frequency-chart.png" alt="Bar chart showing overall AI use frequency">
+            <figcaption><strong>Figure 5.</strong> Overall frequency of AI use in academic work (Q20).</figcaption>
+        </figure>
+        <p>
+            <strong>Frequency of Use:</strong> The sample reported high overall AI usage in academic work (Median = 4.0, "Often"), with 72.7% of participants selecting "Often" or "Almost every time."
+        </p>
+        
+        <p>
+            <em>Note: Given the small sample size (N = 11), these findings are descriptive and should not be generalized to the broader student population. They serve as an initial baseline for understanding student workflows and perceptions.</em>
+        </p>
+    </section>
+
+    <footer>
+    ADS401 Group I · XJTLU · 2026
+    </footer>
+
+</main>
+
+</body>
+</html>

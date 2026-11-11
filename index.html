@@ -1,170 +1,196 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ADS401 Group I - Evaluating AI Integration at XJTLU</title>
-  <style>
-    :root {
-      --xjtu-blue: #002D72;
-      --xjtu-light: #E8ECF4;
-      --text-color: #1a1a1a;
-      --muted: #666;
-      --border: #e0e0e0;
-    }
-    * { box-sizing: border-box; }
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-      line-height: 1.6;
-      margin: 0;
-      padding: 0;
-      color: var(--text-color);
-      background: #fafafa;
-    }
-    header {
-      background: var(--xjtu-blue);
-      color: white;
-      padding: 2rem 2rem 1.5rem;
-    }
-    header h1 {
-      margin: 0 0 0.25rem;
-      font-size: 1.8rem;
-    }
-    header p.subtitle {
-      margin: 0;
-      opacity: 0.85;
-      font-size: 1rem;
-    }
-    main {
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 2rem 1.5rem;
-    }
-    section {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 1.5rem 1.75rem;
-      margin-bottom: 1.5rem;
-    }
-    section h2 {
-      margin-top: 0;
-      color: var(--xjtu-blue);
-      font-size: 1.35rem;
-      border-bottom: 2px solid var(--xjtu-light);
-      padding-bottom: 0.5rem;
-    }
-    .rq-box {
-      background: var(--xjtu-light);
-      border-left: 4px solid var(--xjtu-blue);
-      padding: 1rem 1.25rem;
-      border-radius: 4px;
-      font-size: 1.05rem;
-      font-weight: 500;
-    }
-    .meta-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    .meta-list li {
-      padding: 0.5rem 0;
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      gap: 0.75rem;
-    }
-    .meta-list li:last-child { border-bottom: none; }
-    .meta-label {
-      font-weight: 600;
-      min-width: 140px;
-      color: var(--xjtu-blue);
-    }
-    footer {
-      text-align: center;
-      color: var(--muted);
-      font-size: 0.85rem;
-      padding: 1.5rem;
-      border-top: 1px solid var(--border);
-      background: white;
-    }
-    a { color: var(--xjtu-blue); }
-    .tag {
-      display: inline-block;
-      background: var(--xjtu-light);
-      color: var(--xjtu-blue);
-      font-size: 0.8rem;
-      padding: 0.15rem 0.6rem;
-      border-radius: 12px;
-      margin-right: 0.4rem;
-      margin-bottom: 0.3rem;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ADS401 Group I | Research Project</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <header>
-    <h1>ADS401 Group I</h1>
-    <p class="subtitle">Evaluating AI Integration at XJTLU &mdash; Presentation 2: Evaluation Design</p>
-  </header>
-  <main>
-    <section>
-      <h2>Research Question</h2>
-      <div class="rq-box">
-        How does an AI-assisted literature reading and summarization workflow affect XJTLU students&rsquo; unaided comprehension of academic papers relevant to their thesis projects?
+
+  <!-- Left Sidebar -->
+  <aside class="sidebar">
+
+    <div class="sidebar-header">
+      <h2>AI-assisted literature reading and independent comprehension</h2>
+      <p>Group I</p>
+    </div>
+
+    <nav class="sidebar-nav">
+
+      <p class="nav-label">PROJECT</p>
+
+      <a href="index.html" class="nav-link active">
+        <span>⌂</span> Overview
+      </a>
+
+      <a href="objective.html" class="nav-link">
+        <span>◎</span> Objectives
+      </a>
+
+      <a href="survey.html" class="nav-link">
+        <span>▤</span> Survey
+      </a>
+
+      <a href="design-method.html" class="nav-link">
+        <span>◈</span> Design Method
+      </a>
+
+      <a href="evaluation-method.html" class="nav-link">◷ Evaluation & Results</a>
+      
+      <!-- <a href="results.html" class="nav-link">▥ Results</a> -->
+      
+      <a href="conclusion.html" class="nav-link">
+        <span>✓</span> Conclusion
+      </a>
+
+    </nav>
+
+    <div class="sidebar-footer">
+      <p>ADS401</p>
+      <p>XJTLU · 2026</p>
+    </div>
+
+  </aside>
+
+
+  <!-- Main Content -->
+  <main class="main-content">
+
+    <header class="page-header">
+      <div>
+        <p class="breadcrumb">ADS401 / Project Overview</p>
+        <h1>Research Overview</h1>
+        <p class="subtitle">
+          Evaluating AI Integration at XJTLU
+        </p>
       </div>
+    </header>
+
+
+    <section class="content-section">
+
+      <h2>Research Question</h2>
+
+      <div class="rq-box">
+How does an AI-assisted literature reading and summarization workflow shape XJTLU students' 
+confidence and comprehension of academic papers relevant to their thesis projects?
+      </div>
+
     </section>
 
-    <section>
+
+    <section class="content-section">
+
       <h2>Target Users</h2>
+
       <ul class="meta-list">
+
         <li>
           <span class="meta-label">Population</span>
-          <span>XJTLU undergraduate and postgraduate students working on thesis projects</span>
-        </li>
-        <li>
-          <span class="meta-label">Institution</span>
-          <span>Xi&rsquo;an Jiaotong-Liverpool University (XJTLU)</span>
-        </li>
-        <li>
-          <span class="meta-label">Relevant Context</span>
-          <span>Students who regularly read academic papers as part of their thesis literature review</span>
-        </li>
-        <li>
-          <span class="meta-label">Key Characteristics</span>
           <span>
-            <span class="tag">Thesis students</span>
-            <span class="tag">Academic paper readers</span>
-            <span class="tag">AI tool users (varying experience)</span>
+            XJTLU Masters and PhD students
+            working on thesis projects
           </span>
         </li>
+
+        <li>
+          <span class="meta-label">Institution</span>
+          <span>
+            Xi'an Jiaotong-Liverpool University (XJTLU)
+          </span>
+        </li>
+
+        <!-- <li>
+          <span class="meta-label">Context</span>
+          <span>
+            Academic research and literature review
+            for thesis projects
+          </span>
+        <li> -->
+
+        <li>
+          <span class="meta-label">Participant Characteristics</span>
+          <span>
+            <!-- <span class="tag">Thesis students</span> -->
+            <span class="tag">Academic paper readers</span>
+            <span class="tag">AI tool users</span>
+          </span>
+        </li>
+
       </ul>
+
     </section>
 
-    <section>
+
+    <section class="content-section">
+
       <h2>Team Members</h2>
+
       <ul class="meta-list">
-        <li><span class="meta-label">Member 1</span><span>Kun Zhang (张坤)</span></li>
-        <li><span class="meta-label">Member 2</span><span>Minghao Yu (余铭昊)</span></li>
-        <li><span class="meta-label">Member 3</span><span>Letizia</span></li>
-        <li><span class="meta-label">Member 4</span><span>Diego Lopez</span></li>
+
+        <li>
+          <span class="meta-label">Member 1</span>
+          <span>Kun Zhang (张坤)</span>
+        </li>
+
+        <li>
+          <span class="meta-label">Member 2</span>
+          <span>Minghao Yu (余铭昊)</span>
+        </li>
+
+        <li>
+          <span class="meta-label">Member 3</span>
+          <span>Letizia Marceline Maukar</span>
+        </li>
+
+        <li>
+          <span class="meta-label">Member 4</span>
+          <span>Diego Lopez</span>
+        </li>
+
       </ul>
+
     </section>
 
-    <section>
+
+    <section class="content-section">
+
       <h2>About This Project</h2>
+
       <p>
-        This study is part of the <strong>ADS401 Evaluation Methods and Statistics</strong> module at XJTLU.
-        Our group explores how AI-assisted reading and summarization tools influence students&rsquo;
-        independent comprehension of academic literature in the context of thesis research.
+        This study is part of the ADS401 Evaluation Methods
+        and Statistics module at XJTLU. Our group explores
+        how AI-assisted reading and summarization tools
+        influence students' independent comprehension
+        of academic literature in the context of thesis research.
       </p>
+
       <ul>
-        <li><a href="presentation3.html">Presentation 3 &mdash; AI-assisted literature reading and independent comprehension (slides)</a></li>
-        <li><a href="https://github.com/Wakeral/ADS401-Group-I">Project Repository</a></li>
+        <li>
+          <a href="presentation3.html">
+            Presentation 3 — Evaluation Design
+          </a>
+        </li>
+
+        <li>
+          <a href="https://github.com/Wakeral/ADS401-Group-I">
+            Project Repository
+          </a>
+        </li>
+
         <li>Module Leader: Dr Yue Li</li>
       </ul>
+
     </section>
+
+
+    <footer>
+      ADS401 Group I · XJTLU · September 2026
+    </footer>
+
   </main>
-  <footer>
-    ADS401 Group I &middot; XJTLU &middot; September 2026
-  </footer>
+
 </body>
 </html>
