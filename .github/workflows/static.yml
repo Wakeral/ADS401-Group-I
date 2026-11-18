@@ -1,8 +1,8 @@
-# Simple workflow for deploying static content to GitHub Pages
-name: Deploy static content to Pages
+name: Deploy website and MY preview to Pages
 
 on:
-  # Runs on pushes targeting the default branch
+  # Deploy from main to keep the existing github-pages environment policy.
+  # To publish a new MY commit, run this workflow manually on main.
   push:
     branches: ["main"]
 
@@ -29,15 +29,38 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout the existing website
         uses: actions/checkout@v4
+        with:
+          ref: main
+          path: _main
+          persist-credentials: false
+      - name: Checkout the MY preview
+        uses: actions/checkout@v4
+        with:
+          ref: MY
+          path: _preview
+          persist-credentials: false
+      - name: Assemble both websites
+        shell: python
+        run: |
+          from pathlib import Path
+          import shutil
+
+          site = Path('_site')
+          ignore = shutil.ignore_patterns('.git', '.github')
+          if (Path('_main') / 'my').exists():
+              raise RuntimeError('The main branch already owns /my/; refusing to overwrite it.')
+          shutil.copytree('_main', site, ignore=ignore)
+          shutil.copytree('_preview', site / 'my', ignore=ignore)
+          assert (site / 'index.html').read_bytes() == Path('_main/index.html').read_bytes()
+          assert (site / 'my/index.html').read_bytes() == Path('_preview/index.html').read_bytes()
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire repository
-          path: '.'
+          path: '_site'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
