@@ -5,12 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ADS401 Group I | Research Project</title>
   <link rel="stylesheet" href="style.css">
+<script src="site.js" defer></script>
+<script src="document-viewer.js" defer></script>
 </head>
 
 <body>
 
+<button class="sidebar-toggle" type="button" aria-controls="project-sidebar" aria-expanded="true" aria-label="Close project menu" hidden>
+  <svg class="sidebar-toggle-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+  <span class="sidebar-toggle-label">Close menu</span>
+</button>
+<button class="sidebar-backdrop" type="button" aria-label="Close project menu" tabindex="-1" hidden></button>
+
   <!-- Left Sidebar -->
-  <aside class="sidebar">
+  <aside class="sidebar" id="project-sidebar" aria-label="Project navigation">
 
     <div class="sidebar-header">
       <h2>AI-assisted literature reading and independent comprehension</h2>
@@ -21,27 +29,27 @@
 
       <p class="nav-label">PROJECT</p>
 
-      <a href="index.html" class="nav-link active">
+      <a href="#overview" class="nav-link active" aria-current="page">
         <span>⌂</span> Overview
       </a>
 
-      <a href="objective.html" class="nav-link">
+      <a href="#objectives" class="nav-link">
         <span>◎</span> Objectives
       </a>
 
-      <a href="survey.html" class="nav-link">
+      <a href="#survey" class="nav-link">
         <span>▤</span> Survey
       </a>
 
-      <a href="design-method.html" class="nav-link">
+      <a href="#design-method" class="nav-link">
         <span>◈</span> Design Method
       </a>
 
-      <a href="evaluation-method.html" class="nav-link">◷ Evaluation & Results</a>
-      
-      <!-- <a href="results.html" class="nav-link">▥ Results</a> -->
-      
-      <a href="conclusion.html" class="nav-link">
+      <a href="#evaluation-method" class="nav-link">◷ Evaluation & Results</a>
+
+      <!-- <a href="#results" class="nav-link">▥ Results</a> -->
+
+      <a href="#conclusion" class="nav-link">
         <span>✓</span> Conclusion
       </a>
 
@@ -56,12 +64,14 @@
 
 
   <!-- Main Content -->
-  <main class="main-content">
+  <main class="main-content" id="project-content">
+    <article id="overview" class="page-view" data-title="ADS401 Group I | Research Project">
+
 
     <header class="page-header">
       <div>
         <p class="breadcrumb">ADS401 / Project Overview</p>
-        <h1>Research Overview</h1>
+        <h1 tabindex="-1">Research Overview</h1>
         <p class="subtitle">
           Evaluating AI Integration at XJTLU
         </p>
@@ -74,7 +84,7 @@
       <h2>Research Question</h2>
 
       <div class="rq-box">
-How does an AI-assisted literature reading and summarization workflow shape XJTLU students' 
+How does an AI-assisted literature reading and summarization workflow shape XJTLU students'
 confidence and comprehension of academic papers relevant to their thesis projects?
       </div>
 
@@ -169,7 +179,473 @@ confidence and comprehension of academic papers relevant to their thesis project
 
       <ul>
         <li>
-          <a href="presentation3.html">
+          <a href="#presentation3">
+            Presentation 3 — Evaluation Design
+          </a>
+        </li>
+
+        <li>
+          <a href="https://github.com/Wakeral/ADS401-Group-I">
+            Project Repository
+          </a>
+        </li>
+
+        <li>Module Leader: Dr Yue Li</li>
+      </ul>
+
+    </section>
+
+
+    </article>
+
+    <article id="objectives" class="page-view" data-title="Objectives | ADS401 Group I">
+
+
+    <header class="page-header">
+    <p class="breadcrumb">ADS401 / Objectives</p>
+    <h1 tabindex="-1">Research Objectives</h1>
+    <p class="subtitle">
+        Understanding the aims and expected outcomes of our study.
+    </p>
+    </header>
+
+    <section class="content-section">
+    <h2>Research Question</h2>
+    <p>
+        How does AI-assisted literature reading
+        and summarization influence students' independent
+        comprehension of academic papers?
+    </p>
+    </section>
+
+    <section class="content-section">
+        <h2>Research Objectives</h2>
+        <p>
+            Derived from the survey constructs and the experimental reading tasks, this study is guided by five primary objectives:
+        </p>
+        <ol>
+            <li>
+                <strong>Evaluate Confidence Calibration:</strong> To measure the gap between students' confidence in AI-generated answers/summaries and the actual accuracy of those outputs after independent verification.
+            </li>
+            <li>
+                <strong>Assess the Impact of Verification:</strong> To determine how reading the original text changes students' confidence, perceived accuracy, and clarity of understanding.
+            </li>
+            <li>
+                <strong>Identify Moderating Variables:</strong> To investigate whether AI literacy, frequency of tool use, discipline, and language background influence the size of the confidence-accuracy gap.
+            </li>
+            <li>
+                <strong>Explore Academic Integrity Anxiety:</strong> To examine how students' anxiety regarding AI-related academic misconduct relates to their AI usage patterns and verification behaviors.
+            </li>
+            <li>
+                <strong>Analyze Workflow Changes:</strong> To qualitatively explore how AI assistance alters students' independent comprehension, note-taking, and literature synthesis processes.
+            </li>
+        </ol>
+    </section>
+
+
+    </article>
+
+    <article id="survey" class="page-view" data-title="Survey | ADS401 Group I">
+
+
+    <header class="page-header">
+    <p class="breadcrumb">ADS401 / Survey</p>
+    <h1 tabindex="-1">Survey Design</h1>
+    <p class="subtitle">
+        Understanding XJTLU postgraduate students' AI-assisted academic practices.
+    </p>
+    </header>
+
+    <section class="content-section">
+        <h2>Survey Overview</h2>
+        <p>
+            This survey investigates how XJTLU postgraduate students use AI when reading academic papers related to their projects. It aims to capture a comprehensive picture of the modern postgraduate research workflow, specifically focusing on the intersection of AI assistance, academic integrity, and independent learning.
+        </p>
+        <p>
+            The questionnaire is divided into seven distinct parts:
+        </p>
+        <ul>
+            <li><strong>Part A (Demographics):</strong> Collects basic background information, including student status, level of study, and departmental affiliation.</li>
+            <li><strong>Part B (Background & Language):</strong> Establishes a baseline for the student's thesis progress, prior experience with academic reading, and language proficiency.</li>
+            <li><strong>Part C (AI Literacy):</strong> Measures the student's self-reported ability to use AI tools effectively, understand their limitations, and navigate university policies.</li>
+            <li><strong>Part D (AI in Reading & Writing):</strong> Explores the specific workflows students employ when using AI, including the tasks they delegate to AI, their prompting language, and their verification habits.</li>
+            <li><strong>Part E (Academic Integrity Anxiety):</strong> Assesses the level of uncertainty or anxiety students feel regarding the boundaries between acceptable AI assistance and academic misconduct.</li>
+            <li><strong>Part F (Perceived Effects on Understanding):</strong> Captures students' subjective beliefs about whether AI assistance has strengthened or weakened their independent comprehension skills over time.</li>
+            <li><strong>Part G (Discipline, Language & Context):</strong> Investigates how AI reliance might vary based on the technical difficulty of the paper, the relevance to their thesis, and whether they are reading in their first or second language.</li>
+        </ul>
+        <p>
+            By gathering this data, the survey provides essential context for understanding how students can be better supported in using AI responsibly, confidently, and in a way that enhances rather than hinders their independent research skills.
+        </p>
+    </section>
+
+    <section class="content-section">
+        <h2>Participant Information Sheet</h2>
+        <p>Click the link to view the participant information sheet: <a href="consent-form/ADS401.Ethics.ParticipantInformationSheet.AY202627.pdf" target="_blank">Participant Consent Form</a></p>
+
+        <h2>Informed Consent Form</h2>
+        <p>Click the link to view the informed consent form: <a href="consent-form/ADS401.Ethics.InformedConsentForm.AY202627.pdf" target="_blank">Informed Consent Form</a></p>
+
+        <h2>Survey Questions</h2>
+        <p>Click the link to view the survey questions: <a href="questions/survey-questions.pdf" target="_blank">Survey Questions</a></p>
+    </section>
+
+    <section class="content-section">
+        <h2>Summary of Methodology and Data Collection</h2>
+
+        <p>
+            This study employed a <strong>mixed-methods, cross-sectional survey design</strong> to investigate AI usage among XJTLU postgraduate students. The research integrated quantitative Likert-scale items (measuring AI literacy, integrity anxiety,
+            and independent comprehension) with qualitative open-ended questions (capturing reading workflows and verification habits). This approach allowed for both statistical comparison across demographic groups (e.g., discipline, language background)
+            and thematic exploration of how students actually interact with AI tools.
+        </p>
+
+        <p>
+            Data was collected via an online questionnaire and subsequently processed using a programmatic workflow to ensure reproducibility and accuracy. Using <strong>Jupyter Notebook</strong> and <strong>Python</strong>, the raw data was cleaned,
+            filtered for eligibility, and structured using <strong>pandas</strong>. <strong>NumPy</strong> was utilized to compute composite construct scores and standardize variables for calibration analysis. This automated approach ensured that all
+            data transformations were transparent, auditable, and ready for downstream statistical analysis.
+        </p>
+    </section>
+
+
+    </article>
+
+    <article id="design-method" class="page-view" data-title="Design-Method | ADS401 Group I">
+
+
+    <header class="page-header">
+    <p class="breadcrumb">ADS401 / Design Method</p>
+    <h1 tabindex="-1">Research Design Method</h1>
+    <p class="subtitle">
+        Research approach, participants, data collection methods, and analysis techniques used in our study.
+    </p>
+    </header>
+
+    <section class="content-section">
+    <h2>Research Design</h2>
+    <p>
+        This study adopts a mixed-methods research design with a quantitative-dominant,
+        within-subject (repeated-measures) structure. All participants are exposed to the
+        same two tasks and the same conditions, allowing each participant's responses to
+        serve as their own baseline for comparison.
+    </p>
+    <p>
+        The study examines how XJTLU students integrate AI tools into academic literature reading
+        and summarization. It combines quantitative measures — Likert-scale ratings of confidence,
+        perceived accuracy, and clarity of understanding (collected both before and after reading
+        the paper), accuracy of AI-assisted answers against the actual paper, time taken to identify
+        each element, number of AI queries used, and the AI service used.
+    </p>
+    </section>
+
+    <section class="content-section">
+        <h2>Participant Information Sheet</h2>
+        <p>Click the link to view the participant information sheet: <a href="consent-form/ADS401.Ethics.ParticipantInformationSheet.AY202627.pdf" target="_blank">Participant Consent Form</a></p>
+
+        <h2>Informed Consent Form</h2>
+        <p>Click the link to view the informed consent form: <a href="consent-form/ADS401.Ethics.InformedConsentForm.AY202627.pdf" target="_blank">Informed Consent Form</a></p>
+
+        <h2>Questionnaire Used</h2>
+        <p>Click the link to view the questionnaire: <a href="https://forms.cloud.microsoft/r/EQBYQcagi3" target="_blank">Questionnaire</a></p>
+    </section>
+
+    <section class="content-section">
+        <h2>Tasks Given</h2>
+        <ol>
+            <li><b>Task 1: Paper Comprehension</b></li>
+                <p>
+                    Participants use AI only, without reading the paper, to identify the research question,
+                    method, independent and dependent variables, and limitations; they then read the paper
+                    and verify their answers. Confidence, perceived accuracy, and clarity are rated before
+                    and after reading.
+                </p>
+                <p>Link to the research paper used: <a href="research_papers/task1.pdf" target="_blank">Task 1 Paper</a></p>
+            <li><b>Task 2: AI-Assisted Summarization</b></li>
+                <p>
+                    Participants evaluate an AI-generated summary on Likert-scale items before reading the paper,
+                    then re-rate confidence, judged accuracy, and clarity after reading, and indicate whether
+                    they would ask AI for clearer understanding.
+                </p>
+                <p>Link to research paper used: <a href="research_papers/task2.pdf" target="_blank">Task 2 Paper</a></p>
+        </ol>
+    </section>
+
+    <section class="content-section">
+    <h2>Research Variables</h2>
+
+    <h3>Independent Variables</h3>
+    <ul>
+        <li>Frequency of AI usage</li>
+        <li>Types of AI tools used</li>
+        <li>Context of AI usage</li>
+    </ul>
+
+    <!-- <h3>Dependent Variable</h3>
+    <ul>
+        <li></li>
+    </ul> -->
+
+    <h3>Outcome Variables</h3>
+    <ul>
+        <li>Confidence in understanding</li>
+        <li>Perceived accuracy of AI-generated content</li>
+        <li>Clarity of comprehension</li>
+    </ul>
+    </section>
+
+
+    </article>
+
+    <article id="evaluation-method" class="page-view" data-title="Evaluation-Method | ADS401 Group I">
+
+
+    <header class="page-header">
+    <p class="breadcrumb">ADS401 / Evaluation and Results</p>
+    <h1 tabindex="-1">Evaluation Method and Results</h1>
+    <p class="subtitle">
+        Statistical methods used to evaluate the collected survey data and task data.
+    </p>
+    </header>
+
+    <!-- EVALUATION METHOD SECTION -->
+    <section class="content-section">
+        <h2>Survey Evaluation Method</h2>
+        <p>
+            This study employed a <strong>mixed-methods, cross-sectional survey design</strong> to investigate how XJTLU postgraduate students use AI tools in their academic work. The evaluation focused on four core dimensions: (1) the frequency and types of AI tools used, (2) the specific tasks students delegate to AI during academic reading, (3) their self-reported AI literacy and academic integrity anxiety, and (4) their perceived effects of AI on independent comprehension.
+        </p>
+
+        <h3>Data Collection and Processing</h3>
+        <p>
+            Data was collected via an online questionnaire comprising Likert-scale items, multiple-response questions, and open-ended prompts. Raw responses were exported as a structured CSV dataset and processed using <strong>Jupyter Notebook</strong> with <strong>Python</strong>, utilizing <strong>pandas</strong> for data manipulation and <strong>NumPy</strong> for numerical operations. The cleaning pipeline involved filtering ineligible responses, handling missing values, and standardizing bilingual column headers.
+        </p>
+        <p>
+            A custom Python script was developed to parse Likert-scale labels (e.g., mapping <code>A.Never</code> through <code>E.Almost every time</code> to ordinal scores 1–5). Free-text responses regarding AI tool usage were normalized using an editable alias dictionary to group variants (e.g., matching "GPT" and "ChatGPT" under a single model category) before generating frequency distributions and descriptive statistics.
+        </p>
+
+        <h3>Analytical Strategy</h3>
+        <p>
+            Descriptive statistics (counts, percentages, means, medians, and standard deviations) were generated for all quantitative items. Multi-response questions (e.g., tasks performed with AI, difficult paper sections) were analyzed by calculating the proportion of participants selecting each option. To assess the relationship between opposing perceptions of AI's impact, a reverse-scored item (Q50: "AI weakened my independent understanding") was computed and correlated with its positive counterpart (Q49) using Spearman's rank correlation. All resulting tables and charts were exported as CSVs for reporting.
+        </p>
+    </section>
+
+    <!-- RESULTS SECTION -->
+    <section class="content-section">
+        <h2>Brief Survey Results Overview</h2>
+        <p>
+            Analysis of the current dataset (N = 11) reveals several distinct patterns in AI usage and perception among the surveyed postgraduate students:
+        </p>
+
+        <!-- Chart 1: AI Tools -->
+        <figure class="data-figure">
+            <img src="data-visuals/survey/AI-model-used.png" alt="Bar chart showing AI models mentioned by participants">
+            <figcaption><strong>Figure 1.</strong> AI models/tools mentioned by participants (multiple responses allowed). ChatGPT/GPT dominates usage.</figcaption>
+        </figure>
+        <p>
+            <strong>AI Tool Preference:</strong> <strong>ChatGPT / GPT</strong> was the dominant tool, mentioned by 63.6% of participants (n = 7). Doubao followed at 18.2% (n = 2), while Claude, Gemini, DeepSeek, and institutional tools like Xipu AI were each mentioned by a single participant (9.1%).
+        </p>
+
+        <!-- Chart 2: AI Tasks -->
+        <figure class="data-figure">
+            <img src="data-visuals/survey/AI-task-chart.png" alt="Bar chart showing how participants use AI for academic reading">
+            <figcaption><strong>Figure 2.</strong> How participants use AI for academic reading tasks.</figcaption>
+        </figure>
+        <p>
+            <strong>Primary Use Cases:</strong> Students primarily use AI to <strong>explain research methods</strong> (81.8%, n = 9) and <strong>summarize papers</strong> (72.7%, n = 8). Translation (63.6%) and defining terms (54.5%) were also highly cited, whereas extracting limitations was the least common task (9.1%).
+        </p>
+
+        <!-- Chart 3: Difficult Sections & Paper Types -->
+        <div class="chart-pair">
+            <figure class="data-figure">
+                <img src="data-visuals/survey/difficult-sections-chart.png" alt="Bar chart showing difficult paper sections without AI">
+                <figcaption><strong>Figure 3a.</strong> Paper sections participants find most difficult without AI.</figcaption>
+            </figure>
+            <figure class="data-figure">
+                <img src="data-visuals/survey/paper-type.png" alt="Bar chart showing paper types needing AI assistance">
+                <figcaption><strong>Figure 3b.</strong> Types of papers participants think need AI assistance most.</figcaption>
+            </figure>
+        </div>
+        <p>
+            <strong>Reading Challenges:</strong> When reading without AI, participants found <strong>Methodology</strong> (54.5%) and <strong>Technical Terms</strong> (45.5%) the most difficult sections. Consequently, 72.7% felt that highly technical papers and those with complex methods most required AI assistance.
+        </p>
+
+        <!-- Chart 4: Likert Distribution -->
+        <figure class="data-figure">
+            <img src="data-visuals/survey/likert-distribution-chart.png" alt="Stacked bar chart showing Likert response distribution by survey item">
+            <figcaption><strong>Figure 4.</strong> Likert response distribution by survey item.</figcaption>
+        </figure>
+        <figure class="data-figure">
+            <img src="data-visuals/survey/likert-table.png" alt="Legend for Likert response distribution chart">
+            <figcaption><strong>Figure 4b.</strong> Legend for Figure 4.</figcaption>
+        </figure>
+        <p>
+            <strong>Perceived Impact and Calibration:</strong> Participants generally felt AI <em>improved</em> their independent understanding (Mean = 3.73 on a 5-point scale). However, when asked if AI <em>weakened</em> their understanding, the mean was 2.73. After reverse-scoring the negative item, a strong positive Spearman correlation (<em>r</em> = 0.828) emerged between the two items, indicating that students who perceive benefits from AI are also acutely aware of its potential to undermine their independent thinking.
+        </p>
+
+        <!-- Chart 5: Overall Frequency -->
+        <figure class="data-figure">
+            <img src="data-visuals/survey/frequency-chart.png" alt="Bar chart showing overall AI use frequency">
+            <figcaption><strong>Figure 5.</strong> Overall frequency of AI use in academic work (Q20).</figcaption>
+        </figure>
+        <p>
+            <strong>Frequency of Use:</strong> The sample reported high overall AI usage in academic work (Median = 4.0, "Often"), with 72.7% of participants selecting "Often" or "Almost every time."
+        </p>
+
+        <p>
+            <em>Note: Given the small sample size (N = 11), these findings are descriptive and should not be generalized to the broader student population. They serve as an initial baseline for understanding student workflows and perceptions.</em>
+        </p>
+    </section>
+
+
+    </article>
+
+    <article id="conclusion" class="page-view" data-title="Concluding Thoughts | ADS401 Group I">
+
+
+    <header class="page-header">
+    <p class="breadcrumb">ADS401 / Conclusion</p>
+    <h1 tabindex="-1">Future Work</h1>
+    <p class="subtitle">
+        In summary and what we suggest for future research directions based on our findings.
+    </p>
+    </header>
+
+    <!-- <section class="content-section">
+    <h2>Research Aim</h2>
+    <p>
+        To investigate how AI-assisted literature reading
+        and summarization influence students' independent
+        comprehension of academic papers.
+    </p>
+    </section>
+
+    <section class="content-section">
+    <h2>Research Objectives</h2>
+    <ul>
+        <li>Examine students' use of AI tools when reading academic papers.</li>
+        <li>Investigate how students integrate AI into their literature review workflow.</li>
+        <li>Evaluate students' independent understanding of academic literature.</li>
+        <li>Explore the relationship between AI-assisted reading and comprehension.</li>
+    </ul>
+    </section> -->
+
+
+    </article>
+
+    <template id="legacy-main" data-title="ADS401 Group I | Research Project">
+
+
+    <header class="page-header">
+      <div>
+        <p class="breadcrumb">ADS401 / Project Overview</p>
+        <h1 tabindex="-1">Research Overview</h1>
+        <p class="subtitle">
+          Evaluating AI Integration at XJTLU
+        </p>
+      </div>
+    </header>
+
+
+    <section class="content-section">
+
+      <h2>Research Question</h2>
+
+      <div class="rq-box">
+        How does an AI-assisted literature reading and
+        summarization workflow affect XJTLU students'
+        unaided comprehension of academic papers relevant
+        to their thesis projects?
+      </div>
+
+    </section>
+
+
+    <section class="content-section">
+
+      <h2>Target Users</h2>
+
+      <ul class="meta-list">
+
+        <li>
+          <span class="meta-label">Population</span>
+          <span>
+            XJTLU undergraduate and postgraduate students
+            working on thesis projects
+          </span>
+        </li>
+
+        <li>
+          <span class="meta-label">Institution</span>
+          <span>
+            Xi'an Jiaotong-Liverpool University (XJTLU)
+          </span>
+        </li>
+
+        <li>
+          <span class="meta-label">Relevant Context</span>
+          <span>
+            Students who regularly read academic papers
+            as part of their thesis literature review
+          </span>
+        </li>
+
+        <li>
+          <span class="meta-label">Key Characteristics</span>
+          <span>
+            <span class="tag">Thesis students</span>
+            <span class="tag">Academic paper readers</span>
+            <span class="tag">AI tool users</span>
+          </span>
+        </li>
+
+      </ul>
+
+    </section>
+
+
+    <section class="content-section">
+
+      <h2>Team Members</h2>
+
+      <ul class="meta-list">
+
+        <li>
+          <span class="meta-label">Member 1</span>
+          <span>Kun Zhang (张坤)</span>
+        </li>
+
+        <li>
+          <span class="meta-label">Member 2</span>
+          <span>Minghao Yu (余铭昊)</span>
+        </li>
+
+        <li>
+          <span class="meta-label">Member 3</span>
+          <span>Letizia</span>
+        </li>
+
+        <li>
+          <span class="meta-label">Member 4</span>
+          <span>Diego Lopez</span>
+        </li>
+
+      </ul>
+
+    </section>
+
+
+    <section class="content-section">
+
+      <h2>About This Project</h2>
+
+      <p>
+        This study is part of the ADS401 Evaluation Methods
+        and Statistics module at XJTLU. Our group explores
+        how AI-assisted reading and summarization tools
+        influence students' independent comprehension
+        of academic literature in the context of thesis research.
+      </p>
+
+      <ul>
+        <li>
+          <a href="#presentation3">
             Presentation 3 — Evaluation Design
           </a>
         </li>
@@ -190,7 +666,48 @@ confidence and comprehension of academic papers relevant to their thesis project
       ADS401 Group I · XJTLU · September 2026
     </footer>
 
+
+    </template>
+
+    <template id="legacy-results" data-title="Results | ADS401 Group I">
+
+
+    <header class="page-header">
+    <p class="breadcrumb">ADS401 / Results</p>
+    <h1 tabindex="-1">Research Results</h1>
+    <p class="subtitle">
+        Analysis of students' AI usage and academic reading comprehension based on survey data and evaluation metrics.
+    </p>
+    </header>
+
+    <!-- <section class="content-section">
+    <h2>Research Aim</h2>
+    <p>
+        To investigate how AI-assisted literature reading
+        and summarization influence students' independent
+        comprehension of academic papers.
+    </p>
+    </section>
+
+    <section class="content-section">
+    <h2>Research Objectives</h2>
+    <ul>
+        <li>Examine students' use of AI tools when reading academic papers.</li>
+        <li>Investigate how students integrate AI into their literature review workflow.</li>
+        <li>Evaluate students' independent understanding of academic literature.</li>
+        <li>Explore the relationship between AI-assisted reading and comprehension.</li>
+    </ul>
+    </section> -->
+
+    <footer>
+    ADS401 Group I · XJTLU · 2026
+    </footer>
+
+
+    </template>
+    <footer class="site-footer">ADS401 Group I · XJTLU · 2026</footer>
   </main>
 
+  <script type="application/json" id="presentation-source">"\u003c!doctype html>\n\u003chtml lang=\"en\">\n\u003chead>\n\u003cmeta charset=\"utf-8\">\n\u003cmeta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n\u003ctitle>ADS401 Presentation 3 — AI-assisted literature reading and independent comprehension\u003c/title>\n\u003cstyle>\n  :root{\n    --beige:#ede8e3;\n    --paper:#f8f8f8;\n    --ink:#232323;\n    --muted:#6e7477;\n    --line:#232323;\n    --blue-lt:#4f80f5;\n    --blue-dk:#0650ae;\n    --gray-card:#938f8a;\n  }\n  *{box-sizing:border-box;margin:0;padding:0}\n  html,body{height:100%;overflow:hidden;background:#0c0c0c;font-family:\"Inter\",\"Helvetica Neue\",Arial,system-ui,sans-serif;color:var(--ink)}\n\n  #viewport{position:fixed;inset:0;display:flex;align-items:center;justify-content:center}\n  #stage{width:1600px;height:900px;position:relative;transform-origin:center center}\n  .slide{position:absolute;inset:0;width:1600px;height:900px;display:none;background:var(--beige)}\n  .slide.active{display:block}\n  .slide.paper{background:var(--paper)}\n\n  /* ---------- chrome: menu bar + NEXT ---------- */\n  .topbar{position:absolute;top:0;left:0;right:0;height:92px;border-bottom:1.5px solid var(--line)}\n  .menu{position:absolute;left:38px;top:0;width:78px;height:92px;border-right:1.5px solid var(--line);display:flex;flex-direction:column;justify-content:center;gap:9px;padding-left:26px}\n  .menu i{display:block;width:34px;height:3px;background:var(--line)}\n  .nextbtn{position:absolute;right:0;bottom:0;width:280px;height:86px;border-top:1.5px solid var(--line);border-left:1.5px solid var(--line);display:flex;align-items:center;justify-content:flex-end;gap:26px;padding-right:34px;font-size:31px;font-weight:700;letter-spacing:.08em;cursor:pointer;user-select:none;background:transparent;color:var(--ink)}\n  .nextbtn:hover{background:rgba(0,0,0,.04)}\n  .nextbtn .arrow{font-size:38px;font-weight:400}\n  .haschrome{padding:128px 105px 92px}\n\n  /* ---------- typography ---------- */\n  .group-label{font-size:31px;font-weight:500;margin-bottom:40px}\n  .mega{font-size:100px;font-weight:800;line-height:1.14;letter-spacing:-.02em}\n  .page-title{font-size:80px;font-weight:800;letter-spacing:-.01em;margin-bottom:44px}\n  .page-title.lower{text-transform:lowercase}\n\n  /* ---------- survey details ---------- */\n  .detail-row{display:grid;grid-template-columns:300px 1fr;gap:44px;padding:26px 0;}\n  .detail-row dt{font-size:42px;font-weight:800}\n  .detail-row dd{font-size:29px;line-height:1.45;color:var(--ink);max-width:950px}\n\n  /* ---------- generic chart columns ---------- */\n  .columns{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;height:500px}\n  .col-num{font-size:23px;color:#3a3f42;margin-bottom:12px}\n  .col-title{font-size:46px;font-weight:700;margin-bottom:18px}\n  .legend{display:flex;align-items:center;gap:11px;justify-content:center;font-size:19px;margin-bottom:6px}\n  .legend i{width:16px;height:16px;border-radius:50%}\n\n  /* vertical bar chart (pure css, gridlines) */\n  .vchart{position:relative;flex:1}\n  .vgrid{position:absolute;inset:0 0 34px 44px;display:flex;flex-direction:column;justify-content:space-between}\n  .vgrid span{border-top:1.5px solid #d9d9d9;height:0}\n  .vticks{position:absolute;left:0;top:0;bottom:34px;width:38px;display:flex;flex-direction:column;justify-content:space-between;text-align:right;font-size:19px;padding-top:-10px}\n  .vbars{position:absolute;left:44px;right:0;top:0;bottom:34px;display:flex;align-items:flex-end;justify-content:space-around;gap:18px}\n  .vbar{flex:1;max-width:130px;border-radius:18px 18px 0 0;background:var(--blue-lt)}\n  .vbar.dk{background:var(--blue-dk)}\n  .vlabels{position:absolute;left:44px;right:0;bottom:0;height:30px;display:flex;justify-content:space-around;font-size:20px;text-align:center}\n  .vlabels span{flex:1}\n\n  /* ---------- descriptive results ---------- */\n  .two-col{display:grid;grid-template-columns:1fr 1.15fr;gap:60px}\n  .block-num{font-size:23px;color:#3a3f42;margin-bottom:10px}\n  .block-title{font-size:40px;font-weight:700;margin-bottom:10px}\n  .block-note{font-size:23px;margin-bottom:20px}\n  .hchart{position:relative;height:380px;padding-left:230px;padding-top:6px}\n  .hrow{position:relative;height:70px}\n  .hrow .hl{position:absolute;left:-230px;width:216px;top:20px;text-align:right;font-size:22px;white-space:nowrap}\n  .hrow .track{position:absolute;left:0;right:70px;top:6px;bottom:10px;overflow:hidden}\n  .hrow .fill{display:block;height:100%;border-radius:11px;background:var(--blue-dk)}\n  .hrow .hv{position:absolute;right:0;top:22px;font-size:25px;font-weight:600;width:60px}\n  .haxis{position:absolute;left:250px;right:0;top:-26px;display:flex;justify-content:space-between;font-size:24px}\n  .interpret{margin-top:30px;font-size:27px;line-height:1.45}\n\n  /* ---------- additional findings ---------- */\n  .add-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:60px}\n  .add-note{font-size:34px;font-weight:700;line-height:1.35;margin-bottom:24px;max-width:780px}\n  .add-hchart{position:relative;height:420px;padding-left:175px}\n  .add-hchart .hrow{height:78px}\n  .add-hchart .hrow .hl{left:-175px;width:162px;font-size:19px;top:26px}\n  .add-hchart .hrow .track{right:46px}\n  .add-hchart .hrow .hv{width:40px;font-size:22px;top:30px}\n  .add-haxis{position:absolute;left:175px;right:0;top:-28px;display:flex;justify-content:space-between;font-size:21px}\n  .add-cards{display:flex;flex-direction:column;gap:20px}\n  .add-card{border:1.5px solid #d6d6d6;border-radius:20px;background:#fff;padding:22px 30px;box-shadow:0 3px 6px rgba(0,0,0,.08)}\n  .add-card h3{font-size:28px;font-weight:800;margin-bottom:10px}\n  .add-card p{font-size:24px;line-height:1.45;color:var(--muted)}\n\n  /* ---------- next steps ---------- */\n  .step{display:grid;grid-template-columns:380px 1fr;gap:44px;padding:42px 36px;border-bottom:1.5px solid var(--line);align-items:center}\n  .step:first-of-type{border-top:1.5px solid var(--line)}\n  .step h3{font-size:46px;font-weight:800}\n  .step p{font-size:30px;line-height:1.45;max-width:1000px}\n\n  /* ---------- procedure ---------- */\n  .proc-cards{display:flex;gap:30px;margin-bottom:34px}\n  .proc-card{flex:1;background:#fff;border:1.5px solid #d2d2d2;border-radius:26px;padding:22px 26px;box-shadow:0 3px 7px rgba(0,0,0,.09)}\n  .proc-card h3{font-size:25px;font-weight:800;margin-bottom:10px}\n  .proc-card p{font-size:19.5px;line-height:1.48;color:var(--muted)}\n  .proc-row{display:grid;grid-template-columns:260px 1fr;gap:34px;padding:10px 0;align-items:start}\n  .proc-row dt{font-size:42px;font-weight:800}\n  .proc-row dd{font-size:28px;line-height:1.48}\n  .proc-row dd u{text-decoration-thickness:2px}\n\n  /* ---------- conclusion ---------- */\n  .conc-cards{display:flex;gap:56px;margin-top:80px}\n  .conc-card{flex:1;background:var(--gray-card);border-radius:14px;padding:34px 36px 44px;min-height:230px}\n  .conc-card .big{font-size:46px;font-weight:600;margin-bottom:28px}\n  .conc-card p{font-size:28px;line-height:1.4}\n\n  /* ---------- thanks ---------- */\n  .thanks-wrap{position:absolute;inset:0;display:flex;align-items:center;padding-left:100px}\n  .thanks-wrap .mega{font-size:120px}\n\n  /* ---------- controls ---------- */\n  #nav{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:12px;z-index:10}\n  #nav button{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);color:#fff;width:34px;height:34px;border-radius:50%;font-size:15px;cursor:pointer}\n  #dots{display:flex;gap:8px}\n  #dots span{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.35);cursor:pointer}\n  #dots span.on{background:#4f80f5}\n  #counter{position:fixed;bottom:22px;right:26px;color:rgba(255,255,255,.6);font-size:14px;z-index:10}\n\u003c/style>\n\u003c/head>\n\u003cbody>\n\n\u003cdiv id=\"viewport\">\n  \u003cdiv id=\"stage\">\n\n    \u003c!-- 1 · TITLE -->\n    \u003csection class=\"slide active\">\n      \u003cdiv class=\"topbar\">\u003cdiv class=\"menu\">\u003ci>\u003c/i>\u003ci>\u003c/i>\u003ci>\u003c/i>\u003c/div>\u003c/div>\n      \u003cdiv class=\"haschrome\">\n        \u003cdiv class=\"group-label\">Group I\u003c/div>\n        \u003ch1 class=\"mega\">AI-assisted literature reading\u003cbr>and independent\u003cbr>comprehension\u003c/h1>\n      \u003c/div>\n      \u003cdiv class=\"nextbtn\">\u003cspan>NEXT\u003c/span>\u003cspan class=\"arrow\">&rarr;\u003c/span>\u003c/div>\n    \u003c/section>\n\n    \u003c!-- 2 · SURVEY DETAILS -->\n    \u003csection class=\"slide\">\n      \u003cdiv class=\"haschrome\">\n        \u003ch2 class=\"page-title\">SURVEY DETAILS\u003c/h2>\n        \u003cdl>\n          \u003cdiv class=\"detail-row\">\u003cdt>Description\u003c/dt>\u003cdd>One cross-sectional online self-report questionnaire (11 responses), not randomized condition assignments or comprehension-test scores.\u003c/dd>\u003c/div>\n          \u003cdiv class=\"detail-row\">\u003cdt>Participants\u003c/dt>\u003cdd>11 respondents: 10 master&rsquo;s students and 1 PhD student. 7/11 reported currently working on a thesis/dissertation/final-year project.\u003c/dd>\u003c/div>\n          \u003cdiv class=\"detail-row\">\u003cdt>Measures\u003c/dt>\u003cdd>AI-use frequency, confidence/skills, integrity perceptions, perceived comprehension change, and open-text workflow reflections.\u003c/dd>\u003c/div>\n        \u003c/dl>\n      \u003c/div>\n      \u003cdiv class=\"nextbtn\">\u003cspan>NEXT\u003c/span>\u003cspan class=\"arrow\">&rarr;\u003c/span>\u003c/div>\n    \u003c/section>\n\n    \u003c!-- 3 · DEMOGRAPHIC -->\n    \u003csection class=\"slide paper\">\n      \u003cdiv class=\"haschrome\" style=\"padding-bottom:60px\">\n        \u003ch2 class=\"page-title lower\">demographic\u003c/h2>\n        \u003cdiv class=\"columns\">\n          \u003cdiv>\n            \u003cdiv class=\"col-num\">01\u003c/div>\n            \u003cdiv class=\"col-title\">age\u003c/div>\n            \u003cdiv class=\"legend\">\u003ci style=\"background:var(--blue-lt)\">\u003c/i>num of participants\u003c/div>\n            \u003cdiv class=\"vchart\" style=\"height:330px\">\n              \u003cdiv class=\"vticks\">\u003cspan>5\u003c/span>\u003cspan>4\u003c/span>\u003cspan>3\u003c/span>\u003cspan>2\u003c/span>\u003cspan>1\u003c/span>\u003cspan>0\u003c/span>\u003c/div>\n              \u003cdiv class=\"vgrid\">\u003cspan>\u003c/span>\u003cspan>\u003c/span>\u003cspan>\u003c/span>\u003cspan>\u003c/span>\u003cspan>\u003c/span>\u003cspan>\u003c/span>\u003c/div>\n              \u003cdiv class=\"vbars\">\n                \u003cdiv class=\"vbar\" style=\"height:100%\">\u003c/div>\n                \u003cdiv class=\"vbar\" style=\"height:60%\">\u003c/div>\n                \u003cdiv class=\"vbar\" style=\"height:60%\">\u003c/div>\n              \u003c/div>\n              \u003cdiv class=\"vlabels\">\u003cspan>21-24\u003c/span>\u003cspan>25-28\u003c/span>\u003cspan>29+\u003c/span>\u003c/div>\n            \u003c/div>\n          \u003c/div>\n          \u003cdiv>\n            \u003cdiv class=\"col-num\">02\u003c/div>\n            \u003cdiv class=\"col-title\">gender\u003c/div>\n            \u003cdiv class=\"legend\">\u003ci style=\"background:var(--blue-dk)\">\u003c/i>num of participants\u003c/div>\n            \u003cdiv class=\"vchart\" style=\"height:330px\">\n              \u003cdiv class=\"vticks\">\u003cspan>6\u003c/span>\u003cspan>5\u003c/span>\u003cspan>4\u003c/span>\u003cspan>3\u003c/span>\u003cspan>2\u003c/span>\u003cspan>1\u003c/span>\u003cspan>0\u003c/span>\u003c/div>\n              \u003cdiv class=\"vgrid\">\u003cspan>\u003c/span>\u003cspan>\u003c/span>\u003cspan>\u003c/span>\u003cspan>\u003c/span>\u003cspan>\u003c/span>\u003cspan>\u003c/span>\u003cspan>\u003c/span>\u003c/div>\n              \u003cdiv class=\"vbars\">\n                \u003cdiv class=\"vbar dk\" style=\"height:100%\">\u003c/div>\n                \u003cdiv class=\"vbar dk\" style=\"height:66.7%\">\u003c/div>\n              \u003c/div>\n              \u003cdiv class=\"vlabels\">\u003cspan>female\u003c/span>\u003cspan>male\u003c/span>\u003c/div>\n            \u003c/div>\n          \u003c/div>\n          \u003cdiv>\n            \u003cdiv class=\"col-num\">03\u003c/div>\n            \u003cdiv class=\"col-title\">student status\u003c/div>\n            \u003cdiv class=\"legend\">\u003ci style=\"background:var(--blue-dk)\">\u003c/i>num of participants\u003c/div>\n            \u003cdiv class=\"vchart\" style=\"height:330px\">\n              \u003cdiv class=\"vticks\">\u003cspan>8\u003c/span>\u003cspan>6\u003c/span>\u003cspan>4\u003c/span>\u003cspan>2\u003c/span>\u003cspan>0\u003c/span>\u003c/div>\n              \u003cdiv class=\"vgrid\">\u003cspan>\u003c/span>\u003cspan>\u003c/span>\u003cspan>\u003c/span>\u003cspan>\u003c/span>\u003cspan>\u003c/span>\u003c/div>\n              \u003cdiv class=\"vbars\">\n                \u003cdiv class=\"vbar dk\" style=\"height:37.5%\">\u003c/div>\n                \u003cdiv class=\"vbar dk\" style=\"height:100%\">\u003c/div>\n              \u003c/div>\n              \u003cdiv class=\"vlabels\">\u003cspan>international\u003c/span>\u003cspan>local\u003c/span>\u003c/div>\n            \u003c/div>\n          \u003c/div>\n        \u003c/div>\n      \u003c/div>\n    \u003c/section>\n\n    \u003c!-- 4 · DESCRIPTIVE RESULTS -->\n    \u003csection class=\"slide paper\">\n      \u003cdiv class=\"haschrome\" style=\"padding-bottom:60px\">\n        \u003ch2 class=\"page-title lower\">descriptive results\u003c/h2>\n        \u003cdiv class=\"two-col\">\n          \u003cdiv>\n            \u003cdiv class=\"block-num\">01\u003c/div>\n            \u003cdiv class=\"block-title\">academic ai use frequency\u003c/div>\n            \u003cdiv class=\"block-note\">From a scale of 1-5, where 1 is &lsquo;Never&rsquo; and 5 is &lsquo;Almost Always&rsquo;\u003c/div>\n            \u003cdiv class=\"legend\" style=\"margin-bottom:14px\">\u003ci style=\"background:var(--blue-lt)\">\u003c/i>num of participants\u003c/div>\n            \u003cdiv class=\"vchart\" style=\"height:300px\">\n              \u003cdiv class=\"vticks\">\u003cspan>6\u003c/span>\u003cspan>5\u003c/span>\u003cspan>4\u003c/span>\u003cspan>3\u003c/span>\u003cspan>2\u003c/span>\u003cspan>1\u003c/span>\u003cspan>0\u003c/span>\u003c/div>\n              \u003cdiv class=\"vgrid\">\u003cspan>\u003c/span>\u003cspan>\u003c/span>\u003cspan>\u003c/span>\u003cspan>\u003c/span>\u003cspan>\u003c/span>\u003cspan>\u003c/span>\u003cspan>\u003c/span>\u003c/div>\n              \u003cdiv class=\"vbars\">\n                \u003cdiv class=\"vbar\" style=\"height:0%\">\u003c/div>\n                \u003cdiv class=\"vbar\" style=\"height:33.3%\">\u003c/div>\n                \u003cdiv class=\"vbar\" style=\"height:16.7%\">\u003c/div>\n                \u003cdiv class=\"vbar\" style=\"height:100%\">\u003c/div>\n                \u003cdiv class=\"vbar\" style=\"height:33.3%\">\u003c/div>\n              \u003c/div>\n              \u003cdiv class=\"vlabels\">\u003cspan>1\u003c/span>\u003cspan>2\u003c/span>\u003cspan>3\u003c/span>\u003cspan>4\u003c/span>\u003cspan>5\u003c/span>\u003c/div>\n            \u003c/div>\n          \u003c/div>\n          \u003cdiv>\n            \u003cdiv class=\"block-num\">02\u003c/div>\n            \u003cdiv class=\"block-title\">selected self-ratings (mean/5)\u003c/div>\n            \u003cdiv class=\"hchart\">\n              \u003cdiv class=\"haxis\">\u003cspan>0\u003c/span>\u003cspan>2\u003c/span>\u003cspan>4\u003c/span>\u003c/div>\n              \u003cdiv class=\"hrow\">\u003cspan class=\"hl\">AI risk awareness\u003c/span>\u003cspan class=\"track\">\u003cspan class=\"fill\" style=\"width:90%\">\u003c/span>\u003c/span>\u003cspan class=\"hv\">4.5\u003c/span>\u003c/div>\n              \u003cdiv class=\"hrow\">\u003cspan class=\"hl\">Policy knowledge\u003c/span>\u003cspan class=\"track\">\u003cspan class=\"fill\" style=\"width:84%\">\u003c/span>\u003c/span>\u003cspan class=\"hv\">4.2\u003c/span>\u003c/div>\n              \u003cdiv class=\"hrow\">\u003cspan class=\"hl\">Integrity-aware use\u003c/span>\u003cspan class=\"track\">\u003cspan class=\"fill\" style=\"width:80%\">\u003c/span>\u003c/span>\u003cspan class=\"hv\">4\u003c/span>\u003c/div>\n              \u003cdiv class=\"hrow\">\u003cspan class=\"hl\">Prompting skill\u003c/span>\u003cspan class=\"track\">\u003cspan class=\"fill\" style=\"width:78%\">\u003c/span>\u003c/span>\u003cspan class=\"hv\">3.9\u003c/span>\u003c/div>\n              \u003cdiv class=\"hrow\">\u003cspan class=\"hl\">Judge summary accuracy\u003c/span>\u003cspan class=\"track\">\u003cspan class=\"fill\" style=\"width:70%\">\u003c/span>\u003c/span>\u003cspan class=\"hv\">3.5\u003c/span>\u003c/div>\n            \u003c/div>\n          \u003c/div>\n        \u003c/div>\n        \u003cp class=\"interpret\">Interpretation: AI-risk awareness averaged 4.5/5; summary-accuracy confidence averaged 3.5/5. These are self-ratings, not observed ability.\u003c/p>\n      \u003c/div>\n    \u003c/section>\n\n    \u003c!-- 5 · ADDITIONAL FINDINGS -->\n    \u003csection class=\"slide paper\">\n      \u003cdiv class=\"haschrome\" style=\"padding-bottom:60px\">\n        \u003ch2 class=\"page-title lower\">additional findings\u003c/h2>\n        \u003cdiv class=\"add-grid\">\n          \u003cdiv>\n            \u003cp class=\"add-note\">Multi-select percentages use respondents as denominator (n=11); categories can exceed 100% in total.\u003c/p>\n            \u003cdiv class=\"add-hchart\">\n              \u003cdiv class=\"add-haxis\">\u003cspan>0\u003c/span>\u003cspan>5\u003c/span>\u003c/div>\n              \u003cdiv class=\"hrow\">\u003cspan class=\"hl\">explain methods\u003c/span>\u003cspan class=\"track\">\u003cspan class=\"fill\" style=\"width:90%\">\u003c/span>\u003c/span>\u003cspan class=\"hv\">9\u003c/span>\u003c/div>\n              \u003cdiv class=\"hrow\">\u003cspan class=\"hl\">summarize\u003c/span>\u003cspan class=\"track\">\u003cspan class=\"fill\" style=\"width:80%\">\u003c/span>\u003c/span>\u003cspan class=\"hv\">8\u003c/span>\u003c/div>\n              \u003cdiv class=\"hrow\">\u003cspan class=\"hl\">translate\u003c/span>\u003cspan class=\"track\">\u003cspan class=\"fill\" style=\"width:70%\">\u003c/span>\u003c/span>\u003cspan class=\"hv\">7\u003c/span>\u003c/div>\n              \u003cdiv class=\"hrow\">\u003cspan class=\"hl\">define terms\u003c/span>\u003cspan class=\"track\">\u003cspan class=\"fill\" style=\"width:60%\">\u003c/span>\u003c/span>\u003cspan class=\"hv\">6\u003c/span>\u003c/div>\n              \u003cdiv class=\"hrow\">\u003cspan class=\"hl\">compare papers\u003c/span>\u003cspan class=\"track\">\u003cspan class=\"fill\" style=\"width:30%\">\u003c/span>\u003c/span>\u003cspan class=\"hv\">3\u003c/span>\u003c/div>\n            \u003c/div>\n          \u003c/div>\n          \u003cdiv class=\"add-cards\">\n            \u003cdiv class=\"add-card\">\u003ch3>Reported reading challenges\u003c/h3>\u003cp>Methodology: 6/11; discussion: 4/11; technical terms: 5/11.\u003c/p>\u003c/div>\n            \u003cdiv class=\"add-card\">\u003ch3>Integrity anxiety\u003c/h3>\u003cp>7/11 slightly anxious; 3/11 not anxious; 1/11 moderately anxious about integrity when using AI.\u003c/p>\u003c/div>\n            \u003cdiv class=\"add-card\">\u003ch3>Reading frequency\u003c/h3>\u003cp>For paper reading, 5/11 use AI often and 2/11 almost every time; 2/11 sometimes and 2/11 rarely.\u003c/p>\u003c/div>\n          \u003c/div>\n        \u003c/div>\n      \u003c/div>\n    \u003c/section>\n\n    \u003c!-- 6 · WHAT WE LEARNED TO DO NEXT -->\n    \u003csection class=\"slide\">\n      \u003cdiv class=\"haschrome\">\n        \u003ch2 class=\"page-title\" style=\"font-size:76px\">WHAT WE LEARNED TO DO NEXT\u003c/h2>\n        \u003cdiv class=\"step\">\u003ch3>Run the comparison\u003c/h3>\u003cp>Compare the AI-assisted reading condition with reading practice; keep paper difficulty, time, and instructions consistent.\u003c/p>\u003c/div>\n        \u003cdiv class=\"step\">\u003ch3>Measure learning directly\u003c/h3>\u003cp>Use blinded scoring of no-AI comprehension answers and concept maps; record reading time and NASA-TLX; interview after task.\u003c/p>\u003c/div>\n      \u003c/div>\n    \u003c/section>\n\n    \u003c!-- 7 · EXPERIMENT PROCEDURE -->\n    \u003csection class=\"slide paper\">\n      \u003cdiv class=\"haschrome\" style=\"padding-bottom:80px\">\n        \u003ch2 class=\"page-title\">Experiment procedure\u003c/h2>\n        \u003cdiv class=\"proc-cards\">\n          \u003cdiv class=\"proc-card\">\u003ch3>1&nbsp;&nbsp;Paper screening\u003c/h3>\u003cp>Show 3&ndash;5 titles and abstracts; use XJTLU AI to select the most relevant paper for a research question. Record time, AI queries, and choice accuracy.\u003c/p>\u003c/div>\n          \u003cdiv class=\"proc-card\">\u003ch3>2&nbsp;&nbsp;Key information\u003c/h3>\u003cp>Extract research question, contribution, method/data, findings, and limitations. Record completion time, completeness, and whether full-paper reading is still needed.\u003c/p>\u003c/div>\n          \u003cdiv class=\"proc-card\">\u003ch3>3&nbsp;&nbsp;Terminology\u003c/h3>\u003cp>Identify five difficult terms and ask XJTLU AI to explain them. Record time per term and whether the explanation lets the student continue reading.\u003c/p>\u003c/div>\n        \u003c/div>\n        \u003cdl>\n          \u003cdiv class=\"proc-row\">\u003cdt>Plan\u003c/dt>\u003cdd>Consent &rarr; eligibility screen &rarr; comparable thesis-relevant paper &rarr; random assignment to AI-assisted reading or reading practice &rarr; timed reading &rarr; no-AI/no-paper comprehension questions + concept map &rarr; NASA-TLX &rarr; brief interview.\u003c/dd>\u003c/div>\n          \u003cdiv class=\"proc-row\">\u003cdt>Participants\u003c/dt>\u003cdd>We have \u003cu>6 participants\u003c/u> planned to partake in the experiment\u003c/dd>\u003c/div>\n        \u003c/dl>\n      \u003c/div>\n      \u003cdiv class=\"nextbtn\">\u003cspan>NEXT\u003c/span>\u003cspan class=\"arrow\">&rarr;\u003c/span>\u003c/div>\n    \u003c/section>\n\n    \u003c!-- 8 · CONCLUSION -->\n    \u003csection class=\"slide paper\">\n      \u003cdiv class=\"haschrome\">\n        \u003ch2 class=\"page-title\">conclusion\u003c/h2>\n        \u003cdiv class=\"conc-cards\">\n          \u003cdiv class=\"conc-card\">\u003cdiv class=\"big\">3.7/5\u003c/div>\u003cp>mean reported AI use in academic work\u003c/p>\u003c/div>\n          \u003cdiv class=\"conc-card\">\u003cdiv class=\"big\">4.5 / 5\u003c/div>\u003cp>mean awareness of AI error risk\u003c/p>\u003c/div>\n          \u003cdiv class=\"conc-card\">\u003cdiv class=\"big\">3.5 / 5\u003c/div>\u003cp>mean confidence judging summary accuracy\u003c/p>\u003c/div>\n        \u003c/div>\n      \u003c/div>\n      \u003cdiv class=\"nextbtn\">\u003cspan>NEXT\u003c/span>\u003cspan class=\"arrow\">&rarr;\u003c/span>\u003c/div>\n    \u003c/section>\n\n    \u003c!-- 9 · THANK YOU -->\n    \u003csection class=\"slide\">\n      \u003cdiv class=\"topbar\">\u003cdiv class=\"menu\">\u003ci>\u003c/i>\u003ci>\u003c/i>\u003ci>\u003c/i>\u003c/div>\u003c/div>\n      \u003cdiv class=\"thanks-wrap\">\u003cdiv class=\"mega\">Thank you.\u003c/div>\u003c/div>\n    \u003c/section>\n\n  \u003c/div>\n\u003c/div>\n\n\u003cdiv id=\"nav\">\n  \u003cbutton id=\"prev\" aria-label=\"Previous slide\">&#8592;\u003c/button>\n  \u003cdiv id=\"dots\">\u003c/div>\n  \u003cbutton id=\"next\" aria-label=\"Next slide\">&#8594;\u003c/button>\n\u003c/div>\n\u003cdiv id=\"counter\">\u003c/div>\n\n\u003cscript>\n(function(){\n  var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));\n  var dotsBox = document.getElementById('dots');\n  var counter = document.getElementById('counter');\n  var current = 0;\n\n  slides.forEach(function(_, i){\n    var d = document.createElement('span');\n    d.addEventListener('click', function(){ go(i); });\n    dotsBox.appendChild(d);\n  });\n  var dots = Array.prototype.slice.call(dotsBox.children);\n\n  // make every on-slide NEXT button advance\n  Array.prototype.forEach.call(document.querySelectorAll('.nextbtn'), function(btn){\n    btn.addEventListener('click', function(){ go(current + 1); });\n  });\n\n  function fit(){\n    // 0.94 safety margin keeps the whole slide clear of browser chrome / OS dock\n    var s = 0.94 * Math.min(window.innerWidth/1600, window.innerHeight/900);\n    document.getElementById('stage').style.transform = 'scale(' + s + ')';\n  }\n\n  function go(i){\n    current = Math.max(0, Math.min(slides.length - 1, i));\n    slides.forEach(function(sl, idx){ sl.classList.toggle('active', idx === current); });\n    dots.forEach(function(d, idx){ d.classList.toggle('on', idx === current); });\n    counter.textContent = (current + 1) + ' / ' + slides.length;\n  }\n\n  document.getElementById('prev').addEventListener('click', function(){ go(current - 1); });\n  document.getElementById('next').addEventListener('click', function(){ go(current + 1); });\n  document.addEventListener('keydown', function(e){\n    if(e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') go(current + 1);\n    if(e.key === 'ArrowLeft' || e.key === 'PageUp') go(current - 1);\n    if(e.key === 'Home') go(0);\n    if(e.key === 'End') go(slides.length - 1);\n  });\n\n  var startX = null;\n  document.addEventListener('touchstart', function(e){ startX = e.touches[0].clientX; }, {passive:true});\n  document.addEventListener('touchend', function(e){\n    if(startX === null) return;\n    var dx = e.changedTouches[0].clientX - startX;\n    if(Math.abs(dx) > 50) go(current + (dx \u003c 0 ? 1 : -1));\n    startX = null;\n  }, {passive:true});\n\n  window.addEventListener('resize', fit);\n  window.addEventListener('load', fit);\n  fit();\n  go(0);\n  setTimeout(fit, 200);\n})();\n\u003c/script>\n\u003c/body>\n\u003c/html>\n"</script>
 </body>
 </html>
