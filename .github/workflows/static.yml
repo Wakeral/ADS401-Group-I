@@ -1,0 +1,66 @@
+name: Deploy website and MY preview to Pages
+
+on:
+  # Deploy from main to keep the existing github-pages environment policy.
+  # To publish a new MY commit, run this workflow manually on main.
+  push:
+    branches: ["main"]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  # Single deploy job since we're just deploying
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the existing website
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: _main
+          persist-credentials: false
+      - name: Checkout the MY preview
+        uses: actions/checkout@v4
+        with:
+          ref: MY
+          path: _preview
+          persist-credentials: false
+      - name: Assemble both websites
+        shell: python
+        run: |
+          from pathlib import Path
+          import shutil
+
+          site = Path('_site')
+          ignore = shutil.ignore_patterns('.git', '.github')
+          if (Path('_main') / 'my').exists():
+              raise RuntimeError('The main branch already owns /my/; refusing to overwrite it.')
+          shutil.copytree('_main', site, ignore=ignore)
+          shutil.copytree('_preview', site / 'my', ignore=ignore)
+          assert (site / 'index.html').read_bytes() == Path('_main/index.html').read_bytes()
+          assert (site / 'my/index.html').read_bytes() == Path('_preview/index.html').read_bytes()
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '_site'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5
